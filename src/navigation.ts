@@ -2,7 +2,7 @@ import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    { text: 'Grow Your Salon', href: getPermalink('/#features') },
+    { text: 'Grow Your Studio', href: getPermalink('/#features') },
     { text: 'How It Works', href: getPermalink('/#howitworks') },
     { text: 'The Story', href: getPermalink('/about') },
     { text: 'Lifetime Access - Order Now', href: getPermalink('/pricing') },
@@ -15,10 +15,10 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Grow Your Salon’s Buzz',
+      title: 'Grow Your Studio’s Buzz',
       links: [
         { text: "Claim Your Spot – Just $99", href: getPermalink('/pricing') },
-        { text: 'Why We Love Salons', href: getPermalink('/about') },
+        { text: 'Why We Love Makeup Artists', href: getPermalink('/about') },
         { text: 'Get in Touch', href: getPermalink('/contact') },
       ],
     },
@@ -27,11 +27,11 @@ export const footerData = {
     { text: 'Terms of Service', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
-  socialLinks: [], // Hidden as requested for cleaner alignment
-  footNote: `
+  socialLinks: [],
+  footNote: \`
     <div class="inline-flex items-center justify-center flex-wrap">
       <img class='w-5 h-5 mr-2 rounded-sm align-middle' src='/images/footer-icon.webp' alt='Testimonial Makeup' loading='lazy'>
-      <span class="align-middle">✂️ Your success, amplified. | © ${new Date().getFullYear()} <a class="text-blue-600 underline dark:text-muted" href="#">Testimonial Makeup</a> All rights reserved.</span>
+      <span class="align-middle">💄 Your artistry, amplified. | © \${new Date().getFullYear()} <a class="text-blue-600 underline dark:text-muted" href="#">Testimonial Makeup</a> All rights reserved.</span>
     </div>
-  `,
+  \`,
 };

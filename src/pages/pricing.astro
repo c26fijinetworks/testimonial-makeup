@@ -10,7 +10,7 @@ import Hero from '~/components/widgets/Hero.astro';
 
 const metadata = {
   title: 'Pricing - Testimonial Makeup | Save $600/year',
-  description: 'The last review system you will ever buy. One-time $99 payment for a lifetime of 5-star Google reviews. No monthly fees, no hidden costs.',
+  description: 'One-time $99 payment for a lifetime of 5-star Google reviews. No monthly fees for your makeup studio.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -19,7 +19,7 @@ const metadata = {
   <HeroText 
     tagline="The Last Review System You'll Ever Buy ⭐⭐⭐⭐⭐"
     title="Stop Paying Monthly Fees." 
-    subtitle="Most reputation software charge $50–$150 every single month. We charge a flat $99 one-time fee with total setup. That is $600+ back in your pocket in the first year alone to invest in your salon."
+    subtitle="Most reputation software charges $50–$150 every month. We charge a flat $99 one-time fee. That is $600+ back in your pocket in the first year alone to invest in your studio."
   />
 
   <div class="-mt-16">
@@ -33,71 +33,29 @@ const metadata = {
 
   <Features3
     title="What is included in your $99 setup?"
-    subtitle="We handle the heavy lifting so you can stay behind the chair."
+    subtitle="We handle the heavy lifting so you can stay at the makeup station."
     columns={3}
     items={[
       {
         title: 'High-Scan Station Signs',
-        description: 'Custom-designed QR code with your Salon brand for your reception station, optimized to capture that "post-haircut glow".',
+        description: 'Custom-designed QR codes for your makeup station, optimized to capture that "post-glam glow".',
         icon: 'tabler:qrcode',
       },
       {
         title: 'Direct Google Maps Sync',
-        description: 'We connect your engine directly to your Google Business Profile to boost your local reviews and SEO ranking.',
+        description: 'We connect your engine directly to your Google Business Profile to boost your local rankings.',
         icon: 'tabler:brand-google',
       },
       {
-        title: 'The "Wall of Love" Testimonial Widget',
-        description: 'A beautiful, automated widget for your website that showcases your best 5-star reviews to new visitors.',
+        title: 'The "Wall of Love" Widget',
+        description: 'A beautiful, automated widget for your website that showcases your best 5-star reviews.',
         icon: 'tabler:code',
       },
       {
-        title: 'Local SEO Dominance',
-        description: 'Fresh, consistent reviews are the #1 factor for ranking in local search. Our system automates this growth signal for Google.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Unlimited 5-Star Reviews ⭐⭐⭐⭐⭐',
-        description: 'No "per-review" fees or caps. Collect 10 reviews or 10,000—your price never changes. We want you to capture as many glowing reviews as possible from your happy clients.',
+        title: 'Unlimited 5-Star Reviews',
+        description: 'No caps or per-review fees. Collect 10 or 10,000—your price never changes.',
         icon: 'tabler:infinity',
       },
-      {
-        title: 'Lifetime Future-Proofing',
-        description: 'Get all future software updates and new features for life at no extra cost. No "Pro" tiers ever.',
-        icon: 'tabler:refresh',
-      },
-    ]}
-  />
-
-  <FAQs
-    class="-mt-16 px-6"
-    title="Pricing FAQ"
-    items={[
-        { title: 'Why is it a one-time fee?', description: 'We believe in supporting local artists and small businesses. We prefer to charge a fair setup fee for our labor rather than "renting" you software forever.', icon: 'tabler:coin' },
-        { title: 'What if I am not tech-savvy?', description: 'That is why we are here. We do the setup for you. If you can print a PDF, you are ready. Or, just let us know and we will print and mail your station signs at no cost!', icon: 'tabler:tool' },
-        { title: 'Are there any hidden costs?', description: 'Zero. No maintenance fees, no hosting fees, and no "success" fees. $99 is the total cost for the life of your salon.', icon: 'tabler:check' },
-        { title: 'What if I open a second location?', description: 'Your $99 license covers one Google Maps location. If you expand, <a href="/contact/" style="text-decoration: underline;">Contact us</a> for deep discounts on additional shops!', icon: 'tabler:building-store' },
-    ]}
-  >
-    <Fragment slot="bg"><div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div></Fragment>
-  </FAQs>
-
-  <Hero class="-mt-16">
-    <Fragment slot="image">
-      <img 
-        src="/images/testimonial-5.webp" 
-        alt="Salon professional reviewing 5-star feedback" 
-        class="mx-auto rounded-md w-full shadow-lg"
-        loading="lazy"
-      />
-    </Fragment>
-  </Hero>
-
-  <CallToAction
-    title="Ready to Turn Every 'Big Reveal' Into a Rave Review?"
-    subtitle="Claim your lifetime deal today and have your custom review engine ready for your first client tomorrow morning ⭐⭐⭐⭐⭐"
-    actions={[
-      { variant: 'primary', text: 'Secure My $99 Lifetime Deal', href: '#pricing' },
     ]}
   />
 </Layout>
