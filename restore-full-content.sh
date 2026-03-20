@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# 1. Restore Full Index Page (4 FAQs + All Sections)
+cat << 'INNEREOF' > src/pages/index.astro
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
@@ -132,3 +136,90 @@ const metadata = {
     image={{ src: '/images/testimonial-3.webp', alt: 'Testimonial Makeup Alt3', width: 600, height: 600 }}
   />
 </Layout>
+INNEREOF
+
+# 2. Restore Full About Page
+cat << 'INNEREOF' > src/pages/about.astro
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import { lifetimeDeal } from '~/data/pricingData';
+
+const metadata = {
+  title: 'Our Mission - Testimonial Makeup | Built for Artists',
+  description: 'We built Testimonial Makeup because artistry is about talent, but business is about trust. Learn how we help makeup studios dominate Google without the monthly fees.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+<Hero2
+    tagline="We Grow Your Studio ⭐⭐⭐⭐⭐"
+    title='You Create the Art.<br/><span class="text-accent dark:text-white">We Help You Build Your Reputation.</span>'
+    subtitle="Amazing artists lose bookings without reviews. We ensure your reputation matches your talent. No monthly fees—just a simple, automated system to keep your books full."
+    video="/images/hero-animation.mp4" 
+    poster="/images/hero-poster.webp"
+    image={{ src: '/images/hero-poster.webp' }}
+    actions={[
+      { variant: 'primary', text: 'Claim My Lifetime Access - $99', href: '/pricing/' },
+    ]}
+  />
+
+  <Content
+    isReversed
+    items={[
+        { title: 'The "Mirror Reveal"', description: 'The best time to ask for a review is the second your client sees their transformation in the mirror. Your branded QR codes capture that post-glam glow instantly.', icon: 'tabler:sparkles' },
+        { title: 'Local Search SEO', description: 'When someone searches "best makeup artist near me," Google looks for star rating and recency. We automate all three.', icon: 'tabler:map-pin' },
+        { title: 'Client Retention', description: 'A client who leaves a 5-star review is 40% more likely to re-book. Our system turns a one-time booking into a lifelong brand advocate.', icon: 'tabler:users' },
+    ]}
+    image={{ src: '/images/testimonial-4.webp', alt: 'Happy makeup studio client' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Why your studio needs <span class="text-accent">Reviews on Autopilot ⭐⭐⭐⭐⭐</span>
+      </h3>
+      <p>In the beauty industry, your reviews are your digital portfolio—we make sure yours is a 5-star introduction.</p>
+    </Fragment>
+  </Content>
+
+  <Content
+    items={[
+      { title: 'Zero Maintenance', description: 'We know you’re busy with back-to-back bridal parties. Once we set up your system, you never have to log in or manage anything.', icon: 'tabler:settings' },
+      { title: 'The "Wall of Love" Widget', description: 'We automatically sync and showcase your best reviews on your website, building instant trust with new visitors 24/7.', icon: 'tabler:stars' },
+      { title: 'One-Time Payment', description: 'We don’t believe in monthly fees that eat your profits. $99 once, and you own the system for the life of your studio.', icon: 'tabler:coin' },
+    ]}
+    image={{ src: '/images/testimonial-3.webp', alt: 'Makeup artist looking at feedback' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        Our Commitment to Your Success
+      </h2>
+      <p class="text-xl text-muted dark:text-slate-400 mb-8">
+        We handle the technical hurdles so you can stay focused on your art. We are a partner in your growth, ensuring your online presence is as flawless as your applications.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Pricing
+    class="pb-0"
+    title={`<span class="text-accent dark:text-white">Invest in Your Studio’s Future.</span>`}
+    prices={[lifetimeDeal]}
+  />
+
+  <Hero class="-mt-16">
+    <Fragment slot="image">
+      <img src="/images/testimonial-6.webp" alt="A wall of reviews" class="mx-auto rounded-md w-full shadow-lg" />
+    </Fragment>
+  </Hero>
+</Layout>
+INNEREOF
+
+# 3. Final Push
+git add .
+git commit -m "Restore full content and fix broken components on About and Home pages"
+git push origin main
+
+echo "Content restored and pushed!"
