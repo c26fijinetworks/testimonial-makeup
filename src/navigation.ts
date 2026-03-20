@@ -28,10 +28,10 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [],
-  footNote: \`
+  footNote: `
     <div class="inline-flex items-center justify-center flex-wrap">
       <img class='w-5 h-5 mr-2 rounded-sm align-middle' src='/images/footer-icon.webp' alt='Testimonial Makeup' loading='lazy'>
-      <span class="align-middle">💄 Your artistry, amplified. | © \${new Date().getFullYear()} <a class="text-blue-600 underline dark:text-muted" href="#">Testimonial Makeup</a> All rights reserved.</span>
+      <span class="align-middle">💄 Your artistry, amplified. | © ${new Date().getFullYear()} <a class="text-blue-600 underline dark:text-muted" href="#">Testimonial Makeup</a> All rights reserved.</span>
     </div>
-  \`,
+  `,
 };

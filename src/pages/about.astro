@@ -1,5 +1,4 @@
 ---
-import Hero from '~/components/widgets/Hero.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -8,44 +7,30 @@ import { lifetimeDeal } from '~/data/pricingData';
 
 const metadata = {
   title: 'Our Mission - Testimonial Makeup | Built for Artists',
-  description: 'We built Testimonial Makeup because artistry is about talent, but business is about trust. Learn how we help makeup studios dominate Google.',
+  description: 'We help makeup studios dominate Google without the monthly fees.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
 <Hero2
-    tagline="We Grow Your Studio ⭐⭐⭐⭐⭐"
-    title='You Create the Art.<br/><span class="text-accent dark:text-white">We Help You Build Your Reputation.</span>'
-    subtitle="Amazing makeup artists lose bookings without reviews. We ensure your reputation matches your talent. No monthly fees—just an automated system to keep your books full."
-    video="/images/hero-animation.mp4" 
-    poster="/images/hero-poster.webp"
-    actions={[
-      { variant: 'primary', text: 'Claim My Lifetime Access - $99', href: '/pricing/' },
-    ]}
+    tagline="We Grow Your Studio"
+    title='You Create the Art.<br/><span class="text-accent dark:text-white">We Build Your Reputation.</span>'
+    subtitle="Amazing artists lose bookings without reviews. We ensure your reputation matches your talent."
+    actions={[{ variant: 'primary', text: 'Claim My Lifetime Access - $99', href: '/pricing/' }]}
   />
   <Content
     isReversed
     items={[
-        { title: 'The "Mirror Reveal"', description: 'The best time for a review is the second your client sees their transformation. Your branded QR codes capture that glow before they even leave your chair.', icon: 'tabler:sparkles' },
-        { title: 'Local Search SEO', description: 'When someone searches "best makeup artist near me," Google looks for star rating and recency. We automate all three.', icon: 'tabler:map-pin' },
-        { title: 'Client Retention', description: 'A client who leaves a 5-star review is 40% more likely to re-book. Our system turns a one-time glam into a lifelong client.', icon: 'tabler:users' },
+        { title: 'The "Mirror Reveal"', description: 'The best time for a review is the second your client sees their transformation.', icon: 'tabler:sparkles' },
+        { title: 'Client Retention', description: 'A client who leaves a 5-star review is 40% more likely to re-book.', icon: 'tabler:users' },
     ]}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Why your studio needs <span class="text-accent">Reviews on Autopilot ⭐⭐⭐⭐⭐</span>
+        Why your studio needs <span class="text-accent">Reviews on Autopilot</span>
       </h3>
-      <p>In the beauty industry, your reviews are your digital portfolio—we make sure yours is a 5-star introduction.</p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="/images/testimonial-4.webp" alt="Happy makeup studio client" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
-
-  <Pricing
-    class="pb-0"
-    title={\`<span class="text-accent dark:text-white">Invest in Your Studio’s Future.</span>\`}
-    prices={[lifetimeDeal]}
-  />
+  <Pricing prices={[lifetimeDeal]} />
 </Layout>

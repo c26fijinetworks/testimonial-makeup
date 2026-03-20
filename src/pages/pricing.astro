@@ -2,60 +2,30 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import { lifetimeDeal } from '~/data/pricingData';
-import Hero from '~/components/widgets/Hero.astro';
 
 const metadata = {
-  title: 'Pricing - Testimonial Makeup | Save $600/year',
-  description: 'One-time $99 payment for a lifetime of 5-star Google reviews. No monthly fees for your makeup studio.',
+  title: 'Pricing - Testimonial Makeup',
+  description: 'One-time $99 payment for a lifetime of reviews.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <HeroText 
-    tagline="The Last Review System You'll Ever Buy ⭐⭐⭐⭐⭐"
+    tagline="The Last Review System You'll Ever Buy"
     title="Stop Paying Monthly Fees." 
-    subtitle="Most reputation software charges $50–$150 every month. We charge a flat $99 one-time fee. That is $600+ back in your pocket in the first year alone to invest in your studio."
+    subtitle="Most software charges $150 every month. We charge $99 once."
   />
-
-  <div class="-mt-16">
-    <Pricing
-      id="pricing"
-      title="Invest Once. Grow Forever."
-      subtitle="Full White-Glove Setup Included. We build the engine; you focus on your clients."
-      prices={[lifetimeDeal]}
-    />
-  </div>
-
+  <Pricing id="pricing" title="Invest Once. Grow Forever." prices={[lifetimeDeal]} />
   <Features3
-    title="What is included in your $99 setup?"
-    subtitle="We handle the heavy lifting so you can stay at the makeup station."
+    title="What is included?"
     columns={3}
     items={[
-      {
-        title: 'High-Scan Station Signs',
-        description: 'Custom-designed QR codes for your makeup station, optimized to capture that "post-glam glow".',
-        icon: 'tabler:qrcode',
-      },
-      {
-        title: 'Direct Google Maps Sync',
-        description: 'We connect your engine directly to your Google Business Profile to boost your local rankings.',
-        icon: 'tabler:brand-google',
-      },
-      {
-        title: 'The "Wall of Love" Widget',
-        description: 'A beautiful, automated widget for your website that showcases your best 5-star reviews.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'Unlimited 5-Star Reviews',
-        description: 'No caps or per-review fees. Collect 10 or 10,000—your price never changes.',
-        icon: 'tabler:infinity',
-      },
+      { title: 'Branded QR Signs', description: 'Custom signs for your makeup station.', icon: 'tabler:qrcode' },
+      { title: 'Google Maps Sync', description: 'Direct connection to your Google profile.', icon: 'tabler:brand-google' },
+      { title: 'Wall of Love', description: 'Automated widget for your website.', icon: 'tabler:code' },
     ]}
   />
 </Layout>
