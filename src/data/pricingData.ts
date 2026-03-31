@@ -1,6 +1,6 @@
 export const lifetimeDeal = {
-  title: 'Lifetime Deal (Limited time)',
-  subtitle: 'Pay once and own it forever.',
+  title: 'Lifetime Deal (First 300 Studios)',
+  subtitle: 'Lock in your $99 forever deal today.<br/><strong class="text-red-600 dark:text-red-400 text-lg">Price increases to $29/mo after the first 300 spots are gone.</strong>',
   price: 99,
   period: 'One-time payment',
   items: [
@@ -13,9 +13,11 @@ export const lifetimeDeal = {
     { description: 'Zero Risk. 100% Satisfaction Guaranteed!' },
   ],
   callToAction: {
-    target: '_blank' as const,
-    text: 'Get the Forever Plan ( Limited time only )',
-    href: '#', // Add your payment link here
-    variant: 'success', // ADDED THIS LINE
+    target: '_top' as const,
+    text: 'Order Now Same Day',
+    href: '#', 
+    variant: 'success', 
   },
+  hasRibbon: true,
+  ribbonTitle: 'Selling Fast',
 };

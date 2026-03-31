@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Button from '~/components/ui/Button.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Price } from '~/types';
@@ -49,22 +48,18 @@ const {
           ]}
         >
           {
-            price.hasRibbon && (
-              <div class="absolute right-[-5px] top-[-5px] z-10">
-                <div class="w-48 h-[48px] overflow-visible">
-                  <div class="relative h-full">
-                    <div class="absolute w-full h-full bg-green-600 rotate-45 right-[-60px] top-[14px]" />
-                    <div class="absolute text-white font-bold right-[6px] top-[14px] text-sm">
-                      {price.ribbonTitle}
-                    </div>
-                  </div>
-                </div>
+            price.hasRibbon && price.ribbonTitle && (
+              <div class="absolute right-[-5px] 2xl:right-[-8px] rtl:right-auto rtl:left-[-8px] rtl:2xl:left-[-10px] top-[-5px] 2xl:top-[-10px] z-[1] h-[100px] w-[100px] overflow-hidden text-right">
+                <span class="absolute top-[19px] right-[-21px] rtl:right-auto rtl:left-[-21px] block w-full rotate-45 rtl:-rotate-45 bg-red-600 text-center text-[10px] font-bold uppercase leading-5 text-white shadow-[0_3px_10px_-5px_rgba(0,0,0,0.3)] before:absolute before:left-0 before:top-full before:z-[-1] before:border-[3px] before:border-r-transparent before:border-b-transparent before:border-l-red-800 before:border-t-red-800 after:absolute after:right-0 after:top-full after:z-[-1] after:border-[3px] after:border-l-transparent after:border-b-transparent after:border-r-red-800 after:border-t-red-800 content-['']">{price.ribbonTitle}</span>
               </div>
             )
           }
 
           <h3 class="text-2xl font-bold">{price.title}</h3>
-          {price.subtitle && <p class="mt-4 text-muted">{price.subtitle}</p>}
+          
+          {/* Support HTML subtitle rendering for the bold red scarcity text */}
+          {price.subtitle && <p class="mt-4 text-muted leading-relaxed" set:html={price.subtitle}></p>}
+          
           <div class="mt-8 flex-1">
             <div class="flex items-end justify-center">
               <span class="text-5xl font-bold tracking-tight">${price.price}</span>
@@ -111,10 +106,11 @@ const {
                     <input type="text" name="os1" required class="w-full px-4 py-2 border border-gray-300 rounded-lg dark:bg-slate-900" placeholder="Studio Business Name" />
                 </div>
 
-                <button type="submit" class="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-md transition duration-200">
-                  {price.callToAction?.text || 'Get Forever Plan - $99'}
+                {/* Enhanced Red Call To Action button style to drive impulse */}
+                <button type="submit" class="w-full py-4 px-4 bg-red-600 hover:bg-red-700 text-white text-lg font-bold rounded-lg shadow-md transition duration-200">
+                  {price.callToAction?.text || 'Order Now Same Day'}
                 </button>
-                <p class="text-xs text-muted mt-2">SECURE PAYMENT VIA PAYPAL</p>
+                <p class="text-xs text-muted mt-2 text-center uppercase tracking-tighter">SECURE PAYMENT VIA PAYPAL</p>
             </form>
           </div>
         </div>
